@@ -13,13 +13,12 @@ var process = require('process');
 
 var moment = require('moment');
 
-const queue = new Map();
-
 uuid = nanoid(10);
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 process.stdin.resume();
+const queue = new Map();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 

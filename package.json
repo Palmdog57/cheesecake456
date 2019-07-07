@@ -9,7 +9,7 @@
   "author": "Tom Cheesecake",
   "license": "UNLICENSED",
   "dependencies": {
-    "discord.js": "github:discordjs/discord.js",
+    "discord.js": "^11.2.1",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^2.4.0",
     "moment": "^2.24.0",

@@ -12,11 +12,16 @@ module.exports = {
             console.log('body:', body); // Print the HTML for the Google homepage.
 
             if (!error && response.statusCode == 200) {
+                try{
                 emb.setImage(body)
                     .setColor("#00ff00")
                     .setTitle("Here is your random cat");
 
                 msg.channel.send(emb)
+                }catch(error){
+                    console.error(error);
+                    msg.reply("Can't seem to find any catz!");
+                }
             }
         });
     }
