@@ -10,3 +10,5 @@ module.exports = {
 		msg.channel.send(`Arguments: ${args}\nArguments length: ${args.length}`);
 	},
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer

@@ -9,3 +9,5 @@ module.exports = {
 		const dispatcher = serverQueue.connection.playFile('/home/ubuntu/tada.mp3');
     }
 }
+
+//Copyright (C) 2020  Thomas Stephen Palmer

@@ -10,3 +10,5 @@ module.exports = {
 		//log.error(`Command ${commandName} failed with error: ${error}`);
 	}}
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer

@@ -5,3 +5,5 @@ module.exports = {
 		msg.channel.send('Boop.');
 	},
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer

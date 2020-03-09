@@ -13,3 +13,5 @@ module.exports = {
 		msg.channel.send(avatarList);
 	},
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer

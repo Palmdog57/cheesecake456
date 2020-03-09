@@ -45,3 +45,5 @@ module.exports = {
 		msg.channel.send(data, { split: true });
 	},
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer

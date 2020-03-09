@@ -19,3 +19,5 @@ module.exports = {
         msg.reply(`${member.user.tag} has been banned by ${msg.author.tag} because: ${reason}`);
     }
 };
+
+//Copyright (C) 2020  Thomas Stephen Palmer
