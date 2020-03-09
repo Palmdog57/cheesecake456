@@ -1,21 +1,31 @@
 /* ----------------- Declare && initialise required packages ---------------- */
 	const fs = require('fs');
+
 	const Discord = require('discord.js');
-	const { prefix, token } = require('./config.json');
+	const client = new Discord.Client();
+	client.commands = new Discord.Collection();
+
+	//const { prefix, token } = require('./config.json');
+	require('dotenv').config();
+	const prefix = process.env.PREFIX;
+
 	const SimpleNodeLogger = require('simple-node-logger'),
 	opts = {
 		logFilePath:'/var/log/cheesecake456.log',
 		timestampFormat:'YYYY-MM-DD HH:mm:ss.SSS'
 	},
 	log = SimpleNodeLogger.createSimpleFileLogger( opts );
+	
 	var nanoid = require('nanoid');
-	var process = require('process');
-	var moment = require('moment');
 	uuid = nanoid(10);
-	const client = new Discord.Client();
-	client.commands = new Discord.Collection();
+
+	var process = require('process');
 	process.stdin.resume();
-	const queue = new Map();
+	
+	var moment = require('moment');
+	const today = moment().format("YYYY-MM-DD HH:mm:ss");
+	
+	const queue = new Map(); // For playing music [WIP]
 /* -------------------------------------------------------------------------- */
 
 //Import commands && initialise routing engine
@@ -28,7 +38,7 @@ for (const file of commandFiles) {
 // Initialise the listener
 client.once('ready', () => {
 	console.log('=== DISCORD BOT IS RUNNING ===');
-	log.info(`[${uuid}] Connected @ [${moment().format("YYYY-MM-DD HH:mm:ss")}] as ${client.user.username}`);
+	log.info(`[${uuid}] Connected @ [${today}] as ${client.user.username}`);
 });
 
 // Execute when a "slash command" is received
@@ -56,7 +66,7 @@ client.on('message', async (msg) => {
 	} catch (err) {
 		log.error(`[${uuid}] Command '!${commandName}' failed with the following message: `, err.name);
 		msg.reply('There was an error trying to execute that command!');
-		fs.appendFile('/var/log/node-error.log', `\n${moment().format("YYYY-MM-DD HH:mm:ss")} ERROR [${uuid}] Command '!${commandName}' failed with the following message: \n${err.stack}\n------------------------------------------------\n`, function () {
+		fs.appendFile('/var/log/node-error.log', `\n${today} ERROR [${uuid}] Command '!${commandName}' failed with the following message: \n${err.stack}\n------------------------------------------------\n`, function () {
 			console.log(`Command '!${commandName}' failed with the following message: `, err.name);
 		}); 
 	}
@@ -69,4 +79,4 @@ process.on('SIGINT', async function(code) {
 });
 
 // Connect to discord & start the above...
-client.login(token);
+client.login(process.env.TOKEN);
