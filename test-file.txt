@@ -1,6 +1,0 @@
-[Jc2AFEz_4o]
-[Jc2AFEz_4o]
-[Jc2AFEz_4o]
-May 28th 2019, 9:55:51 pm ERROR [0MIoVEIirf] Command '!prune' failed with the following message: 
-May 28th 2019, 9:55:57 pm ERROR [0MIoVEIirf] Command '!server' failed with the following message: 
-2019-May-28 22:01:27 ERROR [spoZOjeEFh] Command '!server' failed with the following message: TypeError: Cannot read property 'name' of null2019-May-28 22:01:30 ERROR [spoZOjeEFh] Command '!kick' failed with the following message: SyntaxError: Illegal break statement2019-May-28 22:01:32 ERROR [spoZOjeEFh] Command '!ban' failed with the following message: SyntaxError: Illegal break statement
